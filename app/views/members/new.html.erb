@@ -1,0 +1,68 @@
+<h1><%=@page_title %></h1>
+<%= form_for @member do |f| %>
+  <div class="form-group">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name, class:'form-control' %><br />
+  </div>
+
+  <div class="form-group">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name ,class:'form-control' %><br />
+  </div>
+
+  <div class="form-group">
+    <%= f.label :dob %><br />
+    <%= f.date_select :dob ,class:'form-control' %><br />
+  </div>
+  <div class="form-group">
+    <%= f.label :city %><br />
+    <%= f.text_field :city ,class:'form-control' %><br />
+  </div>
+
+
+  <div class="form-group">
+    <%= f.label :address %><br />
+    <%= f.text_field :address ,class:'form-control' %><br />
+  </div>
+
+  <div class="form-group">
+  <%= f.label :gender %><br />
+  <%= f.select :gender.to_s, Gender.all.collect {|x| [x.name]}, {:include_blank => 'Select One'},class:'form-control' %><br /><br />
+</div>
+  <div class="form-group">
+    <%= f.label :title %><br />
+    <%= f.select :title.to_s, Title.all.collect {|x| [x.name,x.id]}, {:include_blank => 'Select One'},class:'form-control' %><br /><br />
+  </div>
+  <div class="form-group">
+    <%= f.label :hobbies %><br />
+    <%@hobby.each do |h| %>
+    <p> <%= f.check_box :hobbies,class:'form-control' %><%=h.name %></p><br />
+      <%end %>
+<!--    <%#= f.select :hobbies, Hobby.all.collect {|x| [x.name,x.id]}, {:include_blank => 'Select One'},class:'form-control' %><br /><br />-->
+
+    <br /><br />
+  </div>
+  <div class="form-group">
+    <%= f.label :health_issues %><br />
+    <%@health_issue.each do |h| %>
+      <p> <%= f.check_box :health_issues,class:'form-control' %><%=h.name %></p><br />
+    <%end %>
+  </div>
+  <div class="form-group">
+    <%= f.label :contacts %><br />
+    <%= f.text_field :contacts,class:'form-control' %>
+    <br /><br />
+  </div>
+
+  <div class="form-group">
+    <%= f.label :profession %><br />
+    <%= f.select :profession_id, Profession.all.collect {|x| [x.name,x.id]}, {:include_blank => 'Select One'},class:'form-control' %><br /><br />
+  </div>
+  <div class="form-group">
+    <%= f.label :married_to %><br />
+    <%= f.select :married_to_id, Member.all.collect{|x| [x.first_name+" "+x.last_name,x.id]}, {:include_blank => 'Select One'},class:'form-control' %><br /><br />
+  </div>
+  <%= f.submit "Submit", class:'btn btn-primary' %>
+  <%=link_to "Cancel", root_path, class:'btn btn-default' %>
+
+<% end %>

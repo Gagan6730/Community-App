@@ -1,0 +1,2 @@
+class MarriedToController < ApplicationController
+end

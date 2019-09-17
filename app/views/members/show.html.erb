@@ -1,0 +1,20 @@
+<div id="books-show">
+  <h2><%= @member.first_name+" "+@member.last_name %></h2>
+
+  <div >
+    <h3>Member info:</h3>
+    <ul>
+      <li><strong>DOB:</strong> <%= @member.dob %></li>
+      <li><strong>City:</strong> <%= @member.city %></li>
+      <li><strong>Address:</strong> <%= @member.address%></li>
+      <li><strong>Gender:</strong> <%= @member.gender.to_s%></li>
+      <li><strong>Title:</strong> <%= @member.title.to_s %></li>
+      <li><strong>Hobbies:</strong> <%= @member.hobbies %></li>
+      <li><strong>Health Issues:</strong> <%= @member.health_issues %></li>
+      <li><strong>Contacts:</strong> <%= @member.contacts.to_s%></li>
+      <li><strong>Profession:</strong> <%= @member.profession.to_s%></li>
+      <li><strong>Married to:</strong> <%= @member.married_to.to_s %></li>
+    </ul>
+    <%#=link_to "Buy For "+@book.price, @book.buy, class:'btn btn-success',target:'_blank' %>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--  <title><%#= @page_title ? @page_title : 'Welcome' %> | The BookStore</title>-->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<%= link_to "Home", root_path, ({:class => 'btn btn-primary'}) %>
+<%= link_to "Add Gender", new_gender_path, ({:class => 'btn btn-primary'}) %>
+<%= link_to "Add Title", new_title_path, ({:class => 'btn btn-primary'}) %>
+<%= link_to "Add Hobby", new_hobby_path, ({:class => 'btn btn-primary'}) %>
+<%= link_to "Add Health Issue", new_health_issue_path, ({:class => 'btn btn-primary'}) %>
+<%= link_to "Add Profession", new_profession_path, ({:class => 'btn btn-primary'}) %>
+<%= link_to "Add Member", new_member_path, ({:class => 'btn btn-primary'}) %>
+
+<body>
+<%= yield %>
+</body>
+</html>

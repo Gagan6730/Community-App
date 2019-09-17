@@ -1,0 +1,9 @@
+<h1>Add Health Issue</h1>
+<%= form_for @health_issue do |g| %>
+  <div class="form-group">
+    <%= g.label :name %><br />
+    <%= g.text_field :name, class:'form-control' %><br />
+  </div>
+  <%= g.submit "Submit", class:'btn btn-primary' %>
+  <%=link_to "Cancel", root_path, class:'btn btn-default' %>
+<%end %>
